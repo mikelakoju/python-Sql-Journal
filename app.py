@@ -22,6 +22,8 @@ def view_entries(entries):
     viewing entries from the database
     """
     for entry in entries:
+        # beacuse we are fetching a turple back from the DB, hence we use index
+        # print(f"{entry[1]}\n{entry[2]}\n\n")
         print(f"{entry['date']}\n{entry['content']}\n\n")
 
 
@@ -35,7 +37,7 @@ while user_input != "3":
         prompt_new_entry()
 
     elif user_input == "2":
-        view_entries(get_entries(entries))
+        view_entries(get_entries())
 
     else:
         print("Invalid option please try again")
